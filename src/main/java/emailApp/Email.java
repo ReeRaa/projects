@@ -30,7 +30,10 @@ public class Email {
         //System.out.println("Your password is: "+this.password);
 
         //combine elements to email
-        email=firstname.toLowerCase()+"."+lastname.toLowerCase()+"@"+department+"."+comapnySuffix;
+        if (department==""){
+            email=firstname.toLowerCase()+"."+lastname.toLowerCase()+"@"+comapnySuffix;
+        }else {
+        email=firstname.toLowerCase()+"."+lastname.toLowerCase()+"@"+department+"."+comapnySuffix;}
         //System.out.println("Your email is: "+email);
     }
 
