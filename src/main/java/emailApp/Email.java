@@ -14,9 +14,18 @@ public class Email {
     private String email;
     private String comapnySuffix="eesti.ee";
 
-    //Constructor receive firstname and lastname
+    //get firstname, lastname
+    public void getNames(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Please give firstname: ");
+        firstname=scanner.nextLine();
+        System.out.print("Please give lastname: ");
+        lastname=scanner.nextLine();
+    }
 
-    public Email(String firstname,String lastname){
+    //Constructor to receive firstname and lastname
+    public Email(){
+        getNames();
         this.firstname=firstname;
         this.lastname=lastname;
         //System.out.println("EMAIL CREATED: "+this.firstname+ " "+this.lastname);
