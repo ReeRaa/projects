@@ -47,12 +47,10 @@ public class Student {
                 cources = cources + "\n" + cource;
                 tuitionBalance = tuitionBalance + costOfCource;
             } else {
-                System.out.println("Break!");
                 break;
             }
         }while (1 != 0);
             System.out.println("Enrolled in: " + cources);
-            System.out.println("Tuition balance: " + tuitionBalance);
         }
 
 
@@ -62,6 +60,20 @@ public class Student {
     }
 
     // pay tuition
+    public  void payTuition(){
+        viewBalance();
+        Scanner in=new Scanner(System.in);
+        System.out.print("Enter your payment of $ ");
+        int payment= in.nextInt();
+        tuitionBalance= tuitionBalance-payment;
+        System.out.println("Thank your for your payment of $ "+payment);
+        viewBalance();
+    }
 
     //Show status
+    public String showInfo(){
+        return "Name: "+firstName+" "+lastName+
+                "\nCources enrolled: "+cources+
+                "\nBalance: "+tuitionBalance;
+    }
 }
